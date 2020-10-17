@@ -1,1 +1,1 @@
-//export { default as Jumbotron } from './jumbotron/index.js';
+export { default as Jumbotron } from './jumbotron/index.js';
