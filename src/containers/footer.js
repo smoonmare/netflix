@@ -8,7 +8,7 @@ export function FooterContainer() {
             <Footer.Break />
             <Footer.Row>
                 <Footer.Column>
-                    <Footer.Link href="#">FAQ</Footer.Link>
+                    <Footer.Link href="#">FAQs</Footer.Link>
                     <Footer.Link href="#">Investor Relations</Footer.Link>
                     <Footer.Link href="#">Ways to Watch</Footer.Link>
                     <Footer.Link href="#">Corporate Information</Footer.Link>
