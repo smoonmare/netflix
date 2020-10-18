@@ -9,7 +9,7 @@ import {
   Image
 } from './styles/jumbotron';
 
-export function Jumbotron({
+export default function Jumbotron({
   children,
   direction = "row",
   ...restProps

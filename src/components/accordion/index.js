@@ -11,7 +11,7 @@ import {
 
 const ToggleContext = createContext();
 
-export function Accordion({ children, ...restProps }) {
+export default function Accordion({ children, ...restProps }) {
   return (
     <Container {...restProps}>
       <Inner>{children}</Inner>
