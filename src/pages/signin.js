@@ -11,7 +11,7 @@ export default function Signin() {
     const { firebase } = useContext(FirebaseContext);
     const [emailAddress, setEmailAddress] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError]  =useState('');
+    const [error, setError]  = useState('');
     const isInvalid = password === '' || emailAddress === ''; // check form's input for valid email & password
     const handleSignin = (event) => {
         event.preventDefault();
@@ -40,7 +40,7 @@ export default function Signin() {
                 {error && <Form.Error>{error}</Form.Error>}
                 <Form.Base onSubmit={handleSignin} method="POST">
                     <Form.Input
-                      placeholder="Email address"
+                      placeholder="Email Address"
                       value={emailAddress}
                       onChange={({ target }) => setEmailAddress(target.value)}
                     />
