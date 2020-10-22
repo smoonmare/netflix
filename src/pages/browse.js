@@ -10,5 +10,3 @@ export default function Browse() {
 
     return <BrowseContainer slides={slides} />;
 }
-
-// 05:06:44 timestamp
