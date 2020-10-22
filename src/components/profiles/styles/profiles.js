@@ -51,10 +51,7 @@ export const Item = styled.li`
   &:hover > ${Picture} {
     border: 1px solid white;
   }
-  &:hover ${Name} {
-    font-weight: bold;
-    color: white;
-  }
+  
   &:last-of-type {
     margin-right: 0;
   }
