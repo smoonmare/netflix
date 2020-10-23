@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import { Background, Feature, FeatureCallOut, Dropdown, Group, Picture, Profile, Text, Link, Container, ButtonLink, Logo } from './styles/header';
+import { Background, Feature, FeatureCallOut, Dropdown, Group, Search, SearchIcon, SearchInput, Picture, Profile, Text, PlayButton, Link, Container, ButtonLink, Logo } from './styles/header';
 
 export default function Header({ bg = true, children, ...restProps }) {
   return bg ? <Background {...restProps}>{children}</Background> : children;
@@ -11,6 +11,23 @@ Header.Feature = function HeaderFeature({ children, ...restProps }) {
 }
 Header.Picture = function HeaderPicture({ src, ...restProps}) {
   return <Picture {...restProps} src={`/images/users/${src}.png`} />;
+}
+
+Header.Search = function HeaderSearch({ searchTerm, setSearchTerm, ...restProps }) {
+  const [searchActive, setSearchActive] = useState(false);
+
+  return (
+    <Search {...restProps}>
+      <SearchIcon onClick={() => setSearchActive((searchActive) => !searchActive)}>
+        <img src="/images/icons/search.png" alt="Search" />
+      </SearchIcon>
+      <SearchInput 
+        value={searchTerm}
+        onClick={({ target }) => setSearchTerm(target.value)}
+        placeholder="Search Catalog"
+        active={searchActive} />
+    </Search>
+  );
 }
 
 Header.Profile = function HeaderProfile({ children, ...restProps}) {
@@ -27,6 +44,10 @@ Header.Text = function HeaderText({ children, ...restProps }) {
 
 Header.TextLink = function HeaderTextLink({ children, ...restProps}) {
   return <Link {...restProps}>{children}</Link>;
+}
+
+Header.PlayButton = function HeaderPlayButton({ children, ...restProps}) {
+  return <PlayButton {...restProps}>{children}</PlayButton>;
 }
 
 Header.FeatureCallOut = function HeaderFeatureCallOut({ children, ...restProps}) {
